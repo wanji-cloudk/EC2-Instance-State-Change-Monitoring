@@ -50,8 +50,6 @@ aws --version
 ```bash
 aws configure
 
-
-
   AWS Access Key ID:      - your key
   AWS Secret Access Key:  - your secret
   Default region name:    us-east-1
@@ -70,6 +68,7 @@ Terraform (`main.tf`) This file sets up our EC2 instance, the SNS topic for aler
 Boto3 (`upload.py`) Instead of using the AWS Console, i used this Python script to stop the instance. This will trigger the CloudWatch Event Rule i just built
 
 ## Verify your AMI ID
+
 Get a valid Amazon Linux 2 AMI for us-east-1:
 bashaws ec2 describe-images \
   --owners amazon \
@@ -91,10 +90,12 @@ terraform apply
 
 ![Terraform destroy](https://raw.githubusercontent.com/wanji-cloudk/EC2-Instance-State-Change-Monitoring/main/terraform%20destroy.png)
 
-![aws notificatin](https://github.com/wanji-cloudk/EC2-Instance-State-Change-Monitoring/blob/fe0c40e80f41b985d7751629980b8b5337539ad7/aws%20notificatin.png)
 
 ## Confirm your SNS subscription
 Check your email inbox for an AWS Notification - Subscription Confirmation message and click Confirm subscription. Without this step, alerts will not be delivered.
+
+![aws notificatin](https://github.com/wanji-cloudk/EC2-Instance-State-Change-Monitoring/blob/fe0c40e80f41b985d7751629980b8b5337539ad7/aws%20notificatin.png)
+
 
 ## Run the test script
 Update INSTANCE_ID in ec2-monitoring.py with your instance ID, then run:
@@ -103,6 +104,10 @@ python3 ec2-monitoring.py
 
 ## Check your email
 Within 60 seconds you should receive a JSON email alert showing the instance state changed to stopping and stopped.
+
+![aws notificatin](https://github.com/wanji-cloudk/EC2-Instance-State-Change-Monitoring/blob/fe0c40e80f41b985d7751629980b8b5337539ad7/aws%20notificatin.png)
+
+
 
 
 
