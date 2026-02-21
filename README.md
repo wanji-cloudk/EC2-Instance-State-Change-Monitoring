@@ -82,6 +82,8 @@ Update the ami value in main.tf with the result.
 ## Deploy with Terraform
 ```bash
 terraform init
+
+![init apply alt](https://github.com/wanji-cloudk/EC2-Instance-State-Change-Monitoring/blob/86af67f3f4d89e3b322f121df413efcd09c72cf0/terraform%20apply.png)
 terraform plan
 terraform apply
 Type yes when prompted. Copy the instance_id from the output.
@@ -96,5 +98,6 @@ python3 ec2-monitoring.py
 
 ## Check your email
 Within 60 seconds you should receive a JSON email alert showing the instance state changed to stopping and stopped.
+
 
 
