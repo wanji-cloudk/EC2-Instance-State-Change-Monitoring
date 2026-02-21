@@ -105,7 +105,7 @@ python3 ec2-monitoring.py
 ## Check your email
 Within 60 seconds you should receive a JSON email alert showing the instance state changed to stopping and stopped.
 
-![aws notificatin](https://github.com/wanji-cloudk/EC2-Instance-State-Change-Monitoring/blob/fe0c40e80f41b985d7751629980b8b5337539ad7/aws%20notificatin.png)
+
 
 
 
