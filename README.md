@@ -70,14 +70,15 @@ Boto3 (`upload.py`) Instead of using the AWS Console, i used this Python script 
 ## Verify your AMI ID
 
 Get a valid Amazon Linux 2 AMI for us-east-1:
-bashaws ec2 describe-images \
+
+```bash
+aws ec2 describe-images \
   --owners amazon \
   --filters "Name=name,Values=amzn2-ami-hvm-*-x86_64-gp2" \
   --query "sort_by(Images, &CreationDate)[-1].ImageId" \
   --output text \
   --region us-east-1
 Type yes when prompted. Copy the instance_id from the output.
-Update the ami value in main.tf with the result.
 
 ## Deploy with Terraform
 ```bash
@@ -104,6 +105,7 @@ python3 ec2-monitoring.py
 
 ## Check your email
 Within 60 seconds you should receive a JSON email alert showing the instance state changed to stopping and stopped.
+
 
 
 
