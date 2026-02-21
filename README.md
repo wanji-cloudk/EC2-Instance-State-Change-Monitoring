@@ -89,6 +89,8 @@ terraform apply
 
 ![Terraform Apply](https://raw.githubusercontent.com/wanji-cloudk/EC2-Instance-State-Change-Monitoring/main/terraform%20apply.png)
 
+![Terraform destroy](https://raw.githubusercontent.com/wanji-cloudk/EC2-Instance-State-Change-Monitoring/main/terraform%20destroy.png)
+
 ## Confirm your SNS subscription
 Check your email inbox for an AWS Notification - Subscription Confirmation message and click Confirm subscription. Without this step, alerts will not be delivered.
 
@@ -99,6 +101,7 @@ python3 ec2-monitoring.py
 
 ## Check your email
 Within 60 seconds you should receive a JSON email alert showing the instance state changed to stopping and stopped.
+
 
 
 
