@@ -77,15 +77,17 @@ bashaws ec2 describe-images \
   --query "sort_by(Images, &CreationDate)[-1].ImageId" \
   --output text \
   --region us-east-1
+Type yes when prompted. Copy the instance_id from the output.
 Update the ami value in main.tf with the result.
 
 ## Deploy with Terraform
 ```bash
 terraform init
-![Terraform Apply](https://raw.githubusercontent.com/wanji-cloudk/EC2-Instance-State-Change-Monitoring/main/terraform%20apply.png)
 terraform plan
 terraform apply
-Type yes when prompted. Copy the instance_id from the output.
+
+
+![Terraform Apply](https://raw.githubusercontent.com/wanji-cloudk/EC2-Instance-State-Change-Monitoring/main/terraform%20apply.png)
 
 ## Confirm your SNS subscription
 Check your email inbox for an AWS Notification - Subscription Confirmation message and click Confirm subscription. Without this step, alerts will not be delivered.
@@ -97,6 +99,7 @@ python3 ec2-monitoring.py
 
 ## Check your email
 Within 60 seconds you should receive a JSON email alert showing the instance state changed to stopping and stopped.
+
 
 
 
